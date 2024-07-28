@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './App.css'
 import datas from './datas';
 
@@ -52,15 +53,32 @@ function RowItem({ text, col, align }) {
   );
 }
 
-function Footer() {
+function Footer({ opacity }) {
   return (
-    <footer>
+    <footer style={{ opacity }}>
       <span>© 2024 ODSMPD. All rights reserved.</span>
     </footer>
   );
 }
 
 function App() {
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      let newOpacity = scrollPosition / maxScroll;
+      if (newOpacity > 1) newOpacity = 1;
+      setOpacity(newOpacity);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.addEventListener('scroll', handleScroll);
+    };
+  }, []);
   const headerText = "2024 下半年 PD 技術分享會"
   return (
     <>
@@ -68,7 +86,7 @@ function App() {
       <main>
         <TableContainer />
       </main>
-      <Footer />
+      <Footer opacity={opacity} />
     </>
   );
 }

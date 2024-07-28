@@ -79,4 +79,6 @@ footer {
   bottom: 0;
   color: #2e2e2e;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
 }

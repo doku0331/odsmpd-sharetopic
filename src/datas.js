@@ -27,7 +27,7 @@ const datas = [{
   id: 6,
   date: '2024/10/03',
   topic: '設計模式',
-  speaker: 'Farina Chen'
+  speaker: 'Farina Cheng'
 }, {
   id: 7,
   date: '2024/10/17',
@@ -57,7 +57,7 @@ const datas = [{
   id: 12,
   date: '2024/12/26',
   topic: 'next.js 入門',
-  speaker: 'Farina Chen'
+  speaker: 'Farina Cheng'
 }, {
   id: 13,
   date: '2025/01/09',

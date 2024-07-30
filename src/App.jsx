@@ -24,7 +24,7 @@ function TableHeader() {
     <div className='table-row heading'>
       <RowItem text="Date" col="1" align="center" />
       <RowItem text="Topic" col="5" align="center" />
-      <RowItem text="" col="2" />
+      <RowItem text="Speaker" col="2" />
     </div>
   );
 }
